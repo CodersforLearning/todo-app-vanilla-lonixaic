@@ -5,8 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo-App-VanillaJS</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- Header -->
+    <div class="header">
+        <h1> Hello, <input type="text" id="name" placeholder="Name"></h1>
+        <p>Type in your name above</p>
+    </div>
+    <div class="container">
+        <!-- Content -->
+        <div class="addTodo">
+            <h3>My To-do List:</h3>
+            <form id="addTodoForm">
+                <input type="text" name="todoContent" id="todoContent" placeholder="e.g. Finish Assignment 1">
+                <h4>Choose a category:</h4>
+                <div class="options">
+                    <label>
+                        <input 
+                        type="radio"
+                        name="category"
+                        id="cat1"
+                        value="Urgent" />
+                        <span class="bubble urgent"></span><span>Urgent</span>
+                    </label>
+                    <label>
+                        <input 
+                        type="radio"
+                        name="category"
+                        id="cat2"
+                        value="Important" />
+                        <span class="bubble important"></span>
+                        <span>Important</span>
+
+                    </label>
+                    <label>
+                        <input 
+                        type="radio"
+                        name="category"
+                        id="cat3"
+                        value="Fun" />
+                        <span class="bubble fun"></span>
+                        <span>Fun</span>
+                    </label>
+                </div>
+                <input type="submit" value="Add new todo" />
+            </form>
+        </div>
+        <br /><br />
+        <div class="todoList">
+            <span>
+                <img class="catTitle" src="urgent.png" alt="Urgent!">
+            </span>
+            <span>
+                <img class="catTitle" src="imp.png" alt="Important!">
+            </span>
+            <span>
+                <img class="catTitle" src="fun.png" alt="Fun!">
+            </span>
+            <div class="list" id="todoList-1"></div>
+            <div class="list" id="todoList-2"></div>
+            <div class="list" id="todoList-3"></div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <p>To do list app VanillaJS - Alicia</p>
+    </div>
+    <script src="todo.js"></script>
 </body>
 </html>

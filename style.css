@@ -1,0 +1,222 @@
+body{
+    background-color:rgb(168, 254, 225);
+}
+
+h1{
+    padding-top:150px;
+    text-align:center;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 5rem;
+}
+
+h3, h4{
+    font-family: 'Montserrat', sans-serif;
+    margin: 20px 0;
+}
+
+h4{
+    text-align:center;
+}
+
+p{
+    text-align:center;
+    font-family: 'Patrick Hand', cursive;
+    color: grey;
+}
+
+#name{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+    width:100px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 3rem;
+}
+
+.header{
+    height:400px;
+    background: url(header.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+.footer{
+    height:100px;
+    background: url(header.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top:20px;
+}
+
+.container{
+    margin: 10%;
+}
+
+.catTitle{
+    width:50%;
+}
+
+.todoList{
+    display:grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-content:center;
+    grid-gap:0.5rem;
+    margin:1rem 0;
+}
+
+.todoList span{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+.catContent{
+    padding:1rem;
+    background-color:#AAA;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), button {
+    appearance:none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+/* Style the new todo input box */
+.addTodo input[type="text"]{
+    width:100%;
+    font-size:15px;
+    padding: 10px;
+    background-color:white;
+    box-shadow:0 1px 3px rgba(0,0,0,0.1);
+    border-radius:5px;
+    margin-top: 10px;
+    margin-bottom:20px;
+}
+
+/* Style the category options */
+.addTodo .options{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-gap:1rem;
+    justify-content:center;
+    margin-top:20px;
+    margin-bottom:50px;
+}
+
+input[type="radio"], input[type="checkbox"]{
+    display:none;
+}
+
+/* Style each bubble or radio type checkbox */
+.bubble{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgb(247, 78, 78);
+}
+
+.bubble.urgent{
+    border-color:rgb(247, 78, 78);
+}
+
+.bubble.important{
+    border-color:rgb(231, 127, 23);
+}
+
+.bubble.fun{
+    border-color:rgb(245, 51, 141);
+}
+
+/* Style the checkbox when clicked or checked */
+.bubble::after{
+    content:"";
+    display:block;
+    opacity:0;
+    width:0px;
+    height:0px;
+    background-color: rgb(247, 78, 78);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+
+.bubble.important::after{
+    background-color:rgb(231, 127, 23);
+}
+
+.bubble.fun::after{
+    background-color: rgb(245, 51, 141);
+}
+
+input:checked ~ .bubble::after {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+/* Style add todo button */
+.addTodo input[type="submit"]{
+    display:block;
+    margin: 0 auto;
+    max-width:100%;
+    font-size:20px;
+    padding: 10px 20px;
+    background-color:#f9896a;
+    color: white;
+    border-radius: 10px;
+    border-color:transparent;
+    box-shadow:0 1px 3px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.addTodo input[type="submit"]:hover{
+    opacity:0.75;
+}
+
+/* Style each todo item */
+.todoItem{
+    display:flex;
+    align-items:center;
+    background-color:#FFFEC5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow:0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.todoContent{
+    background-color:#FFFEC5;
+    border-color:transparent;
+
+}
+/* Style edit button */
+.edit {
+    background-color: turquoise;
+    margin:0 5px;
+    border-radius: 5px;
+    border-color:transparent;
+}
+
+/* Style delete button */
+.delete {
+    background-color: rgb(249, 110, 110);
+    border-radius: 5px;
+    border-color:transparent;
+}
+
+/* Strike through the to do when marked as done*/
+.todoItem .done .todoContent input{
+    text-decoration: line-through;
+    color:grey;
+}
+
